@@ -168,7 +168,19 @@ client.on('message', message => {
     });
 
 
-
+client.on('message' , function (message){
+      var token = 'NDcxMzY2NzkwNjMxNTIyMzA1.DpgUdA.zADGlgffG1ALCnu9B3q4EdB22sE'; // التوكن هنا بس
+      if(message.content === '$res bc') {
+if(message.author.id !== '380650390657695744') return message.reply('**الامر خاص بـ صاحب البوت وشكرا**');
+          client.destroy();
+          client.login(token) // لا تغيرها
+var time = 7200000;
+client.setInterval(function() {
+    client.destroy();
+    client.login(token) // لا تغيرها
+  }, time);
+}
+})
 
 
 client.login(process.env.BOT_TOKEN);
